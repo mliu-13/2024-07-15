@@ -3,3 +3,22 @@ title: "2024-07-15"
 format: html
 ---
 
+Does your race or gender affect whether or not you get a callback for an interview in the labor market?
+
+Do stereotypical 'white' names have a higher chance of getting a callback than an African-American sounding name?
+
+Does a more stereotypical 'male' name have a higher chance of getting a callback than a more stereotypical 'female' name?
+
+```{r}
+library(tidyverse)
+library(readr)
+library(dplyr)
+file_path <- "data/resume.csv"
+data <- read_csv(file_path)
+
+organized_data <- data%>%
+  select(name = firstname, call)
+```
+
+1st Column: Name
+2nd Column: Callback (0/1)
